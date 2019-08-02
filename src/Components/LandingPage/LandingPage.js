@@ -14,7 +14,7 @@ class LandingPage extends React.Component {
 
 
   componentWillMount() {
-    API.getCats()
+    API.getCat()
       .then((res) => {
         console.log(res);
         this.setState({
