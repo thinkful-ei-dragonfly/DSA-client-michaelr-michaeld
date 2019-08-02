@@ -6,7 +6,7 @@ export default class Animal extends React.Component {
   render() {
     return (
       <div className="Animal">
-        <img src={this.props.animalInfo.imageURL} alt="animal-image" />
+        <img src={this.props.animalInfo.imageURL} alt="animal_img" />
         <p> {this.props.animalInfo.imageDescription} </p>
       </div>
     );

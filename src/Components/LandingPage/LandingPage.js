@@ -1,5 +1,6 @@
 import React from 'react';
 import './LandingPage.css';
+import { withRouter } from 'react-router-dom';
 const API = require('../../Services/api');
 
 
@@ -22,7 +23,11 @@ class LandingPage extends React.Component {
           imgDesc: res.imageDescription
         })
       })
+  }
 
+  handeClick = () => {
+    console.log('Click');
+    this.props.history.push('/adoption');
   }
 
   render() {
@@ -32,10 +37,10 @@ class LandingPage extends React.Component {
       <div className="Landing-Page">
         <img src={this.state.imgUrl} alt={this.state.imgDesc} />
         <p>Acceptance Criteria Acceptance Criteria Acceptance Criteria Acceptance Criteria Acceptance Criteria Acceptance Criteria Acceptance Criteria Acceptance Criteria Acceptance Criteria Acceptance Criteria Acceptance Criteria Acceptance Criteria Acceptance Criteria Acceptance Criteria</p>
-        <button>Start Process</button>
+        <button onClick={this.handeClick}>Start Process</button>
       </div>
     )
   }
 }
 
-export default LandingPage;
+export default withRouter(LandingPage);
